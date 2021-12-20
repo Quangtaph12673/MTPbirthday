@@ -3,6 +3,7 @@ body,
 html {
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -17,7 +18,7 @@ body {
 .envelope {
   z-index: 2;
   position: absolute;
-  width: 500px;
+  width: 462px;
   height: 366.66667px;
   top: 50%;
   left: 50%;
@@ -76,7 +77,7 @@ body {
   display: block;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: white;
   border-radius: 2px;
 }
 
@@ -114,6 +115,7 @@ body {
 .envelope .back {
   -webkit-transform: rotateY(180deg) translate3d(0, 0, 1px);
           transform: rotateY(180deg) translate3d(0, 0, 1px);
+  margin-left: -16px;
 }
 
 .envelope .back .flip {
@@ -133,8 +135,8 @@ body {
 
 .envelope .back .top-flip:before,
 .envelope .back .bottom-flip:before {
-  width: 388.90873px;
-  height: 388.90873px;
+  width: 360px;
+  height: 360px;
 }
 
 .envelope .back .top-flip {
@@ -169,8 +171,8 @@ body {
 
 .envelope .back .left-flip:before,
 .envelope .back .right-flip:before {
-  width: 269.27249px;
-  height: 269.27249px;
+  width: 300px;
+  height: 300px;
   top: -5px;
 }
 
@@ -207,8 +209,8 @@ body {
   z-index: 1;
   position: absolute;
   top: 5px;
-  left: 10px;
-  width: 490px;
+  left: 0px;
+  width: 411px;
   height: 346.66667px;
   background-color: #fff;
   border-radius: 5px;
@@ -268,7 +270,7 @@ body {
   width: 100%;
   padding: 5px;
   margin: 0;
-  background-color: #f6f6df;
+  background-color: #dfeaf6;
 }
 
 .envelope .back .letter input:focus,

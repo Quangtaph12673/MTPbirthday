@@ -23,7 +23,7 @@
 		/>
 	</head>
 	<body>
-		<div class="absolute inset-0">
+		<div class="absolute inset-0 overflow-hidden">
 			<canvas id="canvas"></canvas>
 		</div>
 		<div class="overflow-hidden mx-1">
@@ -73,16 +73,16 @@
 			</div>
 		</div>
 
-		<div class="flex justify-center clearfix1">
+		<div class="flex justify-center clearfix1 overflow-hidden">
 			<div class="envelope new">
 				<div class="front">
-					<div class="mail lg:pl-[0%] pl-[9%]">
+					<div class="mail lg:pl-[0%] pl-[14%]">
 						<p class="text-5xl mb-2">Happy Birthday</p>
 						<p>Click me</p>
 					</div>
 				</div>
 				<div class="back">
-					<div class="letter text-center relative">
+					<div class="letter text-center relative overflow-hidden">
 						<p class="text-3xl pt-[20px]">Happy birthday</p>
 						<p
 							class="text-2xl pt-[20px]"
@@ -110,10 +110,12 @@
 							</div>
 						</div>
 					</div>
-					<div class="flip left-flip"></div>
-					<div class="flip right-flip"></div>
-					<div class="flip bottom-flip"></div>
-					<div class="flip top-flip"></div>
+					<div id="flipP">
+						<div class="flip left-flip"></div>
+						<div class="flip right-flip"></div>
+						<div class="flip bottom-flip"></div>
+						<div class="flip top-flip"></div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -129,6 +131,7 @@
 				if (!$('.envelope').hasClass('open')) {
 					$('.envelope').click(function () {
 						$(this).removeClass('new').addClass('open');
+
 						buildImage();
 						setTimeout(() => {
 							$(this).css({
