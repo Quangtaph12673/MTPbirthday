@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/jquery.spritely/0.6.5/jquery.spritely.min.js"
+		/>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="absolute inset-0">
+			<canvas id="canvas"></canvas>
+		</div>
+		<div class="overflow-hidden mx-1">
+			<div class="flex justify-center gap-1 my-1">
+				<div
+					id="image-build1"
+					class="
+						shadow
+						w-[200px]
+						transition
+						duration-1000
+						ease-in-out
+						-translate-x-[500%]
+						opacity-0
+					"
+				>
+					<img src="./image/ong2.jpg" class="rounded object-cover" alt="" />
+				</div>
+				<div
+					id="image-build2"
+					class="
+						w-[200px]
+						transition
+						duration-1000
+						ease-in-out
+						delay-500
+						translate-y-[500%]
+					"
+				>
+					<img src="./image/ong2.jpg" class="rounded object-cover" alt="" />
+				</div>
+			</div>
+
+			<div
+				id="image-build3"
+				class="
+					w-[400px]
+					mx-auto
+					delay-700
+					transition
+					duration-1000
+					ease-in-out
+					translate-x-[500%]
+				"
+			>
+				<img src="./image/ong2.jpg" class="rounded object-cover" alt="" />
+			</div>
+		</div>
+
+		<div class="flex justify-center clearfix1">
+			<div class="envelope new">
+				<div class="front">
+					<div class="mail lg:pl-[0%] pl-[9%]">
+						<p class="text-5xl mb-2">Happy Birthday</p>
+						<p>Click me</p>
+					</div>
+				</div>
+				<div class="back">
+					<div class="letter text-center relative">
+						<p class="text-3xl pt-[20px]">Happy birthday</p>
+						<p
+							class="text-2xl pt-[20px]"
+							style="font-family: 'Imperial Script', cursive"
+						>
+							Mai Thu Phương
+						</p>
+						<div
+							id="text-desc"
+							class="absolute top-[-5%]"
+							style="font-family: 'Imperial Script', cursive"
+						>
+							<p class="text-black">Chúc Phương tuổi mới nhiều niềm vui</p>
+							<p>
+								Luôn xin đẹp và tự tin để đạt được thành công trong mục tiêu sắp
+								tới
+							</p>
+						</div>
+
+						<div class="box">
+							<div class="cake">
+								<div class="candle">
+									<div class="fire"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="flip left-flip"></div>
+					<div class="flip right-flip"></div>
+					<div class="flip bottom-flip"></div>
+					<div class="flip top-flip"></div>
+				</div>
+			</div>
+		</div>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+			integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script src="index.js"></script>
+		<script>
+			$(function () {
+				if (!$('.envelope').hasClass('open')) {
+					$('.envelope').click(function () {
+						$(this).removeClass('new').addClass('open');
+						buildImage();
+						setTimeout(() => {
+							$(this).css({
+								transition: 'opacity 1s ease-in-out',
+								opacity: 0,
+							});
+						}, 3000);
+					});
+				}
+			});
+
+			function buildImage() {
+				const image1 = document.getElementById('image-build1');
+				const image2 = document.getElementById('image-build2');
+				const image3 = document.getElementById('image-build3');
+				setTimeout(() => {
+					document.querySelector('.clearfix1').remove();
+					image1.style.transform = 'translate(0px)';
+					image1.style.opacity = '1';
+					image2.style.transform = 'translate(0px)';
+					image2.style.opacity = '1';
+					image3.style.transform = 'translate(0px)';
+					image3.style.opacity = '1';
+				}, 4000);
+				setTimeout(() => {
+					image1.style.transform = 'translateX(10000px)';
+					image2.style.transform = 'translateY(10000px)';
+					image3.style.transform = 'translateX(10000px)';
+				}, 10000);
+			}
+		</script>
+	</body>
+</html>
