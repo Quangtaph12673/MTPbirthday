@@ -31,8 +31,7 @@
 			<div class="after"></div>
 		</div>
 		<div class="opacity-0">
-			<iframe src=”https://olafwempe.com/mp3/silence/silence.mp3″ type=”audio/mp3″ allow=”autoplay” id=”audio” ></iframe>
-			<audio  autoplay>
+			<audio id="myAudio">
 				<source
 					src="https://tainhacmienphi.biz/get/song/api/29299"
 					type="audio/ogg"
@@ -206,6 +205,8 @@
 		></script>
 		<script src="index.js"></script>
 		<script>
+			const au = document.getElementById('myAudio');
+			au.play();
 			$(function () {
 				if (!$('.envelope').hasClass('open')) {
 					$('.envelope').click(function () {
