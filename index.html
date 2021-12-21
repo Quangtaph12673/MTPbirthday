@@ -30,8 +30,13 @@
 			<div class="before"></div>
 			<div class="after"></div>
 		</div>
+		<div class="hidden">
+			<audio controls autoplay>
+				<source src="./mp3/Happy Birthday To You - KTM.mp3" type="audio/ogg" />
+			</audio>
+		</div>
 
-		<div class="overflow-hidden mx-1">
+		<div id="clear2" class="overflow-hidden mx-1">
 			<div class="flex justify-center gap-1 my-1">
 				<div
 					id="image-build1"
@@ -85,7 +90,7 @@
 						headerBirth
 						absolute
 						top-0
-						mx-[11%]
+						mx-[9%]
 						w-80
 						z-50
 						transition
@@ -113,7 +118,7 @@
 					src="./image/ong2.jpg"
 					width="400px"
 					height=""
-					class="rounded-2xl object-cover mx-2 my-[21%]"
+					class="rounded-2xl object-cover opacity-95 w-full mr-1 mt-[28%]"
 					alt=""
 				/>
 				<img
@@ -129,12 +134,26 @@
 			</div>
 		</div>
 
-		<div class="flex justify-center clearfix1 overflow-hidden">
+		<div id="clearfix1" class="flex justify-center overflow-hidden">
 			<div class="envelope new">
 				<div class="front">
 					<div class="mail lg:pl-[0%] pl-[14%]">
-						<p class="text-5xl mb-2">Happy Birthday</p>
-						<p>Click me</p>
+						<p
+							class="text-5xl mb-2"
+							style="font-family: 'Imperial Script', cursive"
+						>
+							Happy Birthday
+						</p>
+						<p
+							style="
+								font-family: 'Imperial Script', cursive;
+								font-family: 'Moo Lah Lah', cursive;
+								font-family: 'Pushster', cursive;
+							"
+							class=""
+						>
+							Click me
+						</p>
 					</div>
 				</div>
 				<div class="back">
@@ -194,7 +213,7 @@
 								transition: 'opacity 1s ease-in-out',
 								opacity: 0,
 							});
-						}, 6500);
+						}, 9000);
 					});
 				}
 			});
@@ -204,19 +223,26 @@
 				const image2 = document.getElementById('image-build2');
 				const image3 = document.getElementById('image-build3');
 				setTimeout(() => {
+					setTimeout(() => {
+						image2.style.transform = 'translate(0px)';
+						image2.style.opacity = '1';
+					}, 1500);
 					image1.style.transform = 'translate(0px)';
 					image1.style.opacity = '1';
-					image2.style.transform = 'translate(0px)';
-					image2.style.opacity = '1';
-					image3.style.transform = 'translate(0px)';
-					image3.style.opacity = '1';
-				}, 9000);
+					setTimeout(() => {
+						image3.style.transform = 'translate(0px)';
+						image3.style.opacity = '1';
+					}, 3000);
+				}, 14000);
 				setTimeout(() => {
 					image1.style.transform = 'translateX(10000px)';
 					image2.style.transform = 'translateY(10000px)';
 					image3.style.transform = 'translateX(10000px)';
+					setTimeout(() => {
+						document.querySelector('#clear2').remove();
+					}, 1500);
 					showEndImage();
-				}, 12000);
+				}, 19000);
 			}
 			function showEndImage() {
 				const imgCenter = document.querySelector('.image-center');
