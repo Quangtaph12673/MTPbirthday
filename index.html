@@ -26,6 +26,11 @@
 		<div class="absolute inset-0 overflow-hidden">
 			<canvas id="canvas"></canvas>
 		</div>
+		<div class="pyro hidden">
+			<div class="before"></div>
+			<div class="after"></div>
+		</div>
+
 		<div class="overflow-hidden mx-1">
 			<div class="flex justify-center gap-1 my-1">
 				<div
@@ -40,7 +45,7 @@
 						opacity-0
 					"
 				>
-					<img src="./image/ong2.jpg" class="rounded object-cover" alt="" />
+					<img src="./image/ong2.jpg" class="rounded-xl object-cover" alt="" />
 				</div>
 				<div
 					id="image-build2"
@@ -53,7 +58,7 @@
 						translate-y-[500%]
 					"
 				>
-					<img src="./image/ong2.jpg" class="rounded object-cover" alt="" />
+					<img src="./image/ong2.jpg" class="rounded-xl object-cover" alt="" />
 				</div>
 			</div>
 
@@ -69,7 +74,58 @@
 					translate-x-[500%]
 				"
 			>
-				<img src="./image/ong2.jpg" class="rounded object-cover" alt="" />
+				<img src="./image/ong2.jpg" class="rounded-xl object-cover" alt="" />
+			</div>
+		</div>
+		<div id="image-center" class="absolute top-0 right-0 left-0 bottom-0">
+			<div class="">
+				<img
+					src="./image/birhHerder.png"
+					class="
+						headerBirth
+						absolute
+						top-0
+						mx-[11%]
+						w-80
+						z-50
+						transition
+						duration-1000
+						ease-in-out
+						-translate-y-[500%]
+					"
+					alt=""
+				/>
+			</div>
+			<div
+				class="
+					z-10
+					relative
+					image-center
+					transform
+					scale-0
+					opacity-0
+					transition
+					duration-1000
+					ease-in-out
+				"
+			>
+				<img
+					src="./image/ong2.jpg"
+					width="400px"
+					height=""
+					class="rounded-2xl object-cover mx-2 my-[21%]"
+					alt=""
+				/>
+				<img
+					src="https://1.bp.blogspot.com/-028aWfRSxl0/WjhtQ6fXMaI/AAAAAAAKhG0/_G28X9XhhLsVX-EszZmN8aVOKxpYnxnegCLcBGAs/s1600/AS003436_00.gif"
+					class="img1 absolute right-0 bottom-0 w-40"
+					alt=""
+				/>
+				<img
+					src="https://3.bp.blogspot.com/-cKV-D6rXo4s/XNQuRKGaqSI/AAAAAAAzBb0/PnsWx0ST3Rs9D83eqd6YnPZTi_qXWpnuACLcBGAs/s1600/AW3855232_10.gif"
+					class="img2 absolute left-0 bottom-0 w-40"
+					alt=""
+				/>
 			</div>
 		</div>
 
@@ -138,7 +194,7 @@
 								transition: 'opacity 1s ease-in-out',
 								opacity: 0,
 							});
-						}, 3000);
+						}, 6500);
 					});
 				}
 			});
@@ -148,19 +204,49 @@
 				const image2 = document.getElementById('image-build2');
 				const image3 = document.getElementById('image-build3');
 				setTimeout(() => {
-					document.querySelector('.clearfix1').remove();
 					image1.style.transform = 'translate(0px)';
 					image1.style.opacity = '1';
 					image2.style.transform = 'translate(0px)';
 					image2.style.opacity = '1';
 					image3.style.transform = 'translate(0px)';
 					image3.style.opacity = '1';
-				}, 4000);
+				}, 9000);
 				setTimeout(() => {
 					image1.style.transform = 'translateX(10000px)';
 					image2.style.transform = 'translateY(10000px)';
 					image3.style.transform = 'translateX(10000px)';
-				}, 10000);
+					showEndImage();
+				}, 12000);
+			}
+			function showEndImage() {
+				const imgCenter = document.querySelector('.image-center');
+				const pyro = document.querySelector('.pyro');
+				const headerBirth = document.querySelector('.headerBirth');
+				const img1 = document.querySelector('.img1');
+				const img2 = document.querySelector('.img2');
+				new Promise((resolve) => {
+					return setTimeout(() => {
+						resolve((headerBirth.style.transform = 'translate(0)'));
+					}, 1500);
+				})
+					.then(() => {
+						return new Promise((resolve) => {
+							return setTimeout(() => {
+								imgCenter.classList.remove('scale-0');
+								imgCenter.classList.remove('opacity-0');
+								imgCenter.classList.add('rotate-[360deg]');
+								pyro.classList.remove('hidden');
+								resolve();
+							}, 1000);
+						});
+					})
+					.then(() => {
+						setTimeout(() => {
+							img1.src = 'https://i.gifer.com/yu1.gif';
+							img2.src =
+								'https://3.bp.blogspot.com/-euBelN7sFR8/XImC_upF1mI/AAAAAAAxxTo/69PeMHYvDQwXAIGa2Xelpn_VDPVOVcBZgCLcBGAs/s1600/AW3682083_01.gif';
+						}, 5000);
+					});
 			}
 		</script>
 	</body>
