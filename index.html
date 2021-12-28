@@ -31,7 +31,7 @@
 			<div class="after"></div>
 		</div>
 		<div class="opacity-0">
-			<audio id="myAudio" autoplay>
+			<audio id="myAudio" autoplay playsinline>
 				<source
 					src="https://tainhacmienphi.biz/get/song/api/29299"
 					type="audio/ogg"
@@ -220,10 +220,9 @@
 			$(function () {
 				if (!$('.envelope').hasClass('open')) {
 					$('.envelope').click(function () {
-						const au = document.getElementById('myAudio');
-						au.play();
 						$(this).removeClass('new').addClass('open');
-
+						var au = document.getElementById('myAudio');
+						au.play();
 						buildImage();
 						setTimeout(() => {
 							$(this).css({
