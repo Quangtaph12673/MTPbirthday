@@ -220,6 +220,8 @@
 			$(function () {
 				if (!$('.envelope').hasClass('open')) {
 					$('.envelope').click(function () {
+						const au = document.getElementById('myAudio');
+						au.play();
 						$(this).removeClass('new').addClass('open');
 
 						buildImage();
