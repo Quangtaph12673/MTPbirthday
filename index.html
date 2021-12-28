@@ -31,7 +31,7 @@
 			<div class="after"></div>
 		</div>
 		<div class="opacity-0">
-			<audio id="myAudio">
+			<audio id="myAudio" autoplay>
 				<source
 					src="https://tainhacmienphi.biz/get/song/api/29299"
 					type="audio/ogg"
@@ -217,10 +217,6 @@
 		></script>
 		<script src="index.js"></script>
 		<script>
-			const au = document.getElementById('myAudio');
-			setInterval(() => {
-				au.play();
-			}, 1000);
 			$(function () {
 				if (!$('.envelope').hasClass('open')) {
 					$('.envelope').click(function () {
